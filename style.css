@@ -52,11 +52,13 @@ input {
 
 ul {
     list-style-type: none;
+    cursor: pointer;
 }
 
 li {
     margin-top: 8px;
 }
+
 ul li:nth-child(odd) {
     background: #f9f9f9;
   }
@@ -66,10 +68,12 @@ ul li:nth-child(odd) {
   }
 
   ul li.checked {
-    background: #888;
-    color: #fff;
+    background: #1d1d1d;
+    color: #3f3d3d;
     text-decoration: line-through;
+
   }
+
 
 .input{
     height: 2.8em;

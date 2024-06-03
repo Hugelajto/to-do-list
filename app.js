@@ -35,24 +35,23 @@ const createEditBtn = () => {
     
     editBtn.addEventListener("click", (e) => {
         const edit = e.target.parentElement
-        const input = document.createElement("input")
-        input.classList = "input"
-        edit.innerHTML = input.innerHTML
+        edit.contentEditable = true;
+        edit.style.backgroundColor = "red";
+        edit.style.textDecoration = "none"
+        
         if (editBtn.className === "editBtn") {
             editBtn.innerHTML = "save"
-        } else if (editBtn.className === "save") {
-            input.value = toDoList.innerHTML
-            input.classList.add("none")      
-            editBtn.innerHTML = "edit"
-            
+            editBtn.contentEditable = false; 
+        } else if (editBtn.innerHTML === "save") {
+                edit.contentEditable = false
+                edit.style.backgroundColor = ""
+                editBtn.innerHTML = "edit"
         }
         edit.append(input, editBtn)
-        console.log(input)
     })
     
     return editBtn
 }
-
 
     const appendTodoList = () => {
         if (formInput.value === ""){
